@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <title>My Portfolio Website</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/636320fbfc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-------------------services------------------------->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-tittle">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>
+                    I specialize in
+                    designing clean Websites at a reasonable costs, with so much quality.
+                    Very good at my work.
+                </p>
+                <a href="#">Learn more</a>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-crop-simple"></i>
+                <h2>UI/UX Design</h2>
+                <p>
+                    I specialize in designing Websites and Apps at a reasonable costs, with so much quality.
+                    Very good at my work.
+                </p>
+                <a href="#">Learn more</a>
+            </div>
+
+            <div>
+                <i class="fa-brands fa-app-store"></i>
+                <h2>App Design</h2>
+                <p>
+                    I specialize in designing Websites and Apps at a reasonable costs, with so much quality.
+                    Very good at my work.
+                </p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------------------------------portfolio/my work---------------------------------->
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-tittle">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="{% static 'images/work-1.png' %}" />
+                <div class="layer">
+                    <h3>Social Media App</h3>
+                    <p>
+                        This app connects you to various talented people around the world.
+                        Download it from play store now.
+                    </p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+
+            </div>
+            <div class="work">
+                <img src="{% static 'images/work-2.png' %}" />
+
+                <div class="layer">
+                    <h3>Music App</h3>
+                    <p>
+                        This app connects you to various talented people around the world. It allows you to listen to your music of your choice online & offline.
+                        Download it from play store now.
+                    </p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="{% static 'images/work-3.png' %}" />
+                <div class="layer">
+                    <h3>Online Shopping App</h3>
+                    <p>
+                        This app allows you to shop online and your favorite clothing choice can be delivered at your door, without having to visit the store.
+                        Download it from play store now.
+                    </p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a target="_blank" href="https://vbyprints.com/" class="btn">See more</a>
+    </div>
+</div>
+<!----------------------next page click button------------------------->
+        <a href="{% url 'webpage3'%}" class="btn">Go to page3</a>
+
+<!------------------------js linking---------------------------->
+        <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
+    

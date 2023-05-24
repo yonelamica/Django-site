@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <title>My Portfolio Website</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/636320fbfc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div id="header">
+        <div class="container">
+            <nav>
+                
+                <img src="{% static 'images/mica_logo.png' %}" />
+             
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="{% url 'webpage2'%}">Services</a></li>
+                    <li><a href="{% url 'webpage2'%}">Portfolio</a></li>
+                    <li><a href="{% url 'webpage3'%}">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+
+            <div class="header-text">
+                <p>Software Engineer </p>
+                <h1>Hi, I'm <span><br>Yonela</span><br /> Mrubata from Cape Town</h1>
+
+            </div>
+        </div>
+    </div>
+    <!----about---->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="{% static 'images/mica.jpg' %}" />
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-tittle">About Me</h1>
+                    <p>Studied Electrical Engineering at College of Cape Town, Self-taught Web Developer<span><br>Studies Software Engineering at Hperion Dev</span><br /></p>
+
+                    <div class="tab-tittles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <!-------------------Skills---- --------------------->
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br />Designing Web/App Interfaces</li>
+                            <li><span>Web Development</span><br />Web App Development</li>
+                            <li><span>App Development</span><br />Building Android/iOS Apps</li>
+                        </ul>
+                    </div>
+
+                    <!-------------------Experience------------------------->
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2022 - Current</span><br />Cast Liason at Kayos Casting Directors.</li>
+                            <li><span>2021 - 2022</span><br />Technical Support.</li>
+                            <li><span>2020</span><br />Assistant Fibre Optic Technician at Motivity.</li>
+                        </ul>
+                    </div>
+
+                    <!-------------------Education------------------------->
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022</span><br />Technical Support.</li>
+                            <li><span>2017 - 2020</span><br />Electrical Engineering.</li>
+                            <li><span>Nov 2022 - Arpil 2023</span><br/>Software Engineering at Hyperion Dev.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!----------------------next page click button------------------------->
+    <a href="{% url 'webpage2'%}" class="btn">Go to page2</a>
+
+<!------------------------js linking---------------------------->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

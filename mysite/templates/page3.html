@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <title>My Portfolio Website</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/636320fbfc.js" crossorigin="anonymous"></script>
+</head>
+<body> 
+  <!------------------------contact---------------------------->
+   <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-tittle">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>mrubatamica@gmail.com</p>
+                <p><i class="fa-sharp fa-solid fa-square-phone"></i>0679391835</p>
+                <div class="social-icons">
+                    <a target="_blank" href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                    <a target="_blank" href="https://twitter.com/"><i class="fa-brands fa-twitter-square"></i></a>
+                    <a target="_blank" href="https://instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                    <a target="_blank" href="https://linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a target="_blank" href="https://github.com/yonelamica"><i class="fa-brands fa-github"></i></a> 
+
+                </div>
+                <a href="{% static 'images/Yonela Mica Mrubata.docx' %}" dowload class="btn btn2">Dowload Cv</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required />
+                    <input type="email" name="Email" placeholder="Your Email address" required />
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>   
+                </form>
+                <!----------------------next page click button------------------------->
+                <a href="{% url 'webpage1'%}" class="btn btn2">Main Menu</a>
+
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright @Yonela Mica. Made with <i class="fa-solid fa-heart"></i></p>
+
+    </div>
+</div>
+
+
+
+    <!------------------------------contact form google drive sheet------------------------------------->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwaADnKDoJ6IiAHNy6hvS3NTOgNZn004LODGjSV4YRovvQPmRiqUK9jlbCUOSQERULE/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+
+                    }, 5000)
+
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+    <!------------------------js linking---------------------------->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+     
+    
