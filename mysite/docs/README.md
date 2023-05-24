@@ -1,0 +1,1 @@
+Created mysite using Django. Check out requirements.txt to install dependancies. 
